@@ -1,3 +1,6 @@
+//https://www.codespeedy.com/hamming-code-in-cpp/
+
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
