@@ -129,7 +129,9 @@ int main ()
         j = s + i;
         min = 1;
     }
-      if (parity % 2 == 0) // Even Parity
+    
+    if(escolha==0){
+     if (parity % 2 == 0) // Even Parity
     {
     err[ec]=0;
     ec++;
@@ -138,7 +140,23 @@ int main ()
     {
     err[ec]=1;
     ec++;
+    }   
     }
+    
+    if(escolha==1){
+     if (parity % 2 == 0) // Even Parity
+    {
+    err[ec]=1;
+    ec++;
+    }
+      else
+    {
+    err[ec]=0;
+    ec++;
+    }   
+    } 
+    
+    
     }
     int flag = 1;
     for(int i =r-1;i>=0;i--)
