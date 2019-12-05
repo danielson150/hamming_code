@@ -5,9 +5,13 @@
 using namespace std;
 int main ()
 {
-    int a, b, c[30], d, r = 0, d1,err[10]={0}; //Max bits here i kept is 30
+    int a, b, c[30], d, r = 0, d1,err[10]={0}, escolha; //Max bits here i kept is 30
     cout << "Enter the No of Data Bits you want to Enter :(Ex: 1001 so enter 4.) ";
     cin >> a;
+    
+    cout << "Qual paridade? 1-IMPAR OU 0-PAR:";
+    cin >> escolha;
+    
     while (a + r + 1 > pow (2, r))
     {
       r++;
@@ -61,7 +65,12 @@ int main ()
         j = s + i;
         min = 1;
     }
-      if (parity % 2 == 0) // Even Parity
+      
+    
+  
+      
+    if(escolha == 0){    
+    if (parity % 2 == 0) // Even Parity
     {
     data[i] = 0;
     }
@@ -70,6 +79,26 @@ int main ()
     data[i] = 1;
     }
     }
+    
+    if(escolha == 1){    
+    if (parity % 2 == 0) // odd Parity
+    {
+    data[i] = 1;
+    }
+      else
+    {
+    data[i] = 0;
+    }
+    }
+    
+    }
+    
+   
+    
+    
+      
+      
+      
     cout << endl << "Hamming codeword bits for even parity are : ";
     for (int i = 1; i <= a + r; ++i)
         cout << data[i] << " ";
