@@ -6,7 +6,7 @@ using namespace std;
 int main ()
 {
     int a, b, c[30], d, r = 0, d1,err[10]={0}, escolha; //Max bits here i kept is 30
-    cout << "Enter the No of Data Bits you want to Enter :(Ex: 1001 so enter 4.) ";
+    cout << "Digite a quantidade de bits de dados que você deseja inserir: ";
     cin >> a;
     
     cout << "Qual paridade? 1-IMPAR OU 0-PAR:";
@@ -16,12 +16,12 @@ int main ()
     {
       r++;
     }
-    cout << "No of redundant data bits to be added " << r << " : Total Bits(data+ redundant) :" << a +
+    cout << "Número de bits de dados redundantes a serem adicionados " << r << " : Total de Bits(data+ redundant) :" << a +
     r << endl;
-    cout << "Enter the Data Bits One by One :" << endl;
+    cout << "Insira os bits de dados (UM A UM) :" << endl;
     for (int i = 1; i <= a; ++i)
         cin >> c[i];
-    cout << endl << "Data bits entered : ";
+    cout << endl << "Bits de dados inseridos : ";
     for (int i = 1; i <= a; ++i)
         cout << c[i] << " ";
     cout << endl;
@@ -41,7 +41,7 @@ int main ()
         ++d1;
         }
     }
-    cout << "Data Bits are Encoded with Parity bits(0): ";
+    cout << "Os bits de dados são codificados com bits de paridade (0): ";
     for (int i = 1; i <= a + r; ++i)
         cout << data[i] << " ";
     d1 = 0;
@@ -65,9 +65,6 @@ int main ()
         j = s + i;
         min = 1;
     }
-      
-    
-  
       
     if(escolha == 0){    
     if (parity % 2 == 0) // Even Parity
@@ -93,19 +90,14 @@ int main ()
     
     }
     
-   
-    
-    
       
-      
-      
-    cout << endl << "Hamming codeword bits for even parity are : ";
+    cout << endl << "A sequencia final transmitida para paridade selecionada é : ";
     for (int i = 1; i <= a + r; ++i)
         cout << data[i] << " ";
     cout << endl << endl;
 
-    cout<<"(Enter the message receieved)"<<endl;
-    cout << "Enter the Data Bits One by One :" << endl;
+    cout<<"(Digite a mensagem recebida)"<<endl;
+    cout << "Insira os bits de dados (UM A UM) :" << endl;
     for (int i = 1; i <= a+r; ++i)
         cin >> res[i];
     d1 = 0;max=0;int ec=0;
@@ -144,7 +136,7 @@ int main ()
     }
     
     if(escolha==1){
-     if (parity % 2 == 0) // Even Parity
+     if (parity % 2 == 0) // Odd Parity
     {
     err[ec]=1;
     ec++;
@@ -170,21 +162,21 @@ int main ()
     if(flag==0)
     {
         int pos=0;
-    cout<<"Error detected at: ";
+    cout<<"Erro detectado em: ";
     for(int i =r-1;i>=0;i--)
     {
         cout<<err[i]<<" ";
         if(err[i]==1)
             pos+=pow(2,i);
     }
-        cout<<"\nPosition of error :"<<pos;
+        cout<<"\nPosição de erro :"<<pos;
         res[pos]=!res[pos];
-        cout<<"\nAfter correction: ";
+        cout<<"\nApós correção: ";
         for(int i =1;i<=a+r;i++)
           cout<<res[i]<<" ";
     }
     else
-       cout<<"No Error detected. ";
+       cout<<"Nenhum erro foi detectado. ";
 
 }
 //End
