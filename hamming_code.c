@@ -52,8 +52,8 @@ int main(){
     }
 
 	printf("Os bits de dados são codificados com bits de paridade(0):\n");
-	for(i=1; i<=a+r;i++){
-		printf("%d", data[i])
+	for(i=1; i<=m+r;i++){
+		printf("%d", data[i]);
 	}
 
 	return 0;
